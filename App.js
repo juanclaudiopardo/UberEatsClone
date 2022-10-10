@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, View } from 'react-native';
+import RestaurantItem from './src/components/restaurantItem/RestaurantItem';
+import restaurant from './assets/data/restaurants.json';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
+      <RestaurantItem restaurant={restaurant[0]} />
+      <RestaurantItem restaurant={restaurant[1]} />
     </View>
   );
 }
@@ -16,5 +18,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
   },
 });
