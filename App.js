@@ -1,20 +1,17 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import BasketScreen from './src/screens/basket/DishDetailsScreen';
-import DishDetailsScreen from './src/screens/dishDetails/DishDetailsScreen';
-import HomeScreen from './src/screens/homeScreens/HomeScreen';
-import OrderScreen from './src/screens/orders/OrderScreen';
-import RestaurantDetailScreen from './src/screens/restaurantDetail/RestaurantDetailScreen';
+import MyStack from './src/navigation/MyStack';
+
 export default function App() {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
+      {/* <View style={styles.container}> */}
       <StatusBar style='light' />
-      {/* <HomeScreen /> */}
-      {/* <RestaurantDetailScreen /> */}
-      {/* <DishDetailsScreen /> */}
-      {/* <BasketScreen /> */}
-      <OrderScreen />
-    </View>
+
+      <MyStack />
+      {/* </View> */}
+    </NavigationContainer>
   );
 }
 
@@ -23,6 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     // alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
 });

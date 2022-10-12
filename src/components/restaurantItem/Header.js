@@ -1,6 +1,5 @@
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import React from 'react';
-import restaurants from '../../../assets/data/restaurants.json';
 
 const RestaurantHeader = ({ restaurant }) => {
   return (
