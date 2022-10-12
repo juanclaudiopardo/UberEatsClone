@@ -6,14 +6,14 @@ const dish = restaurants[0].dishes[0];
 const DishDetailsScreen = () => {
   const [quantity, setQuantity] = useState(1);
 
-  const onMinus = (currentValue) => {
+  const onMinus = () => {
     if (quantity > 1) {
-      setQuantity(currentValue - 1);
+      setQuantity((currentValue) => currentValue - 1);
     }
   };
 
-  const onPlus = (currentValue) => {
-    setQuantity(currentValue + 1);
+  const onPlus = () => {
+    setQuantity((currentValue) => currentValue + 1);
   };
 
   const getTotal = () => {
@@ -30,23 +30,19 @@ const DishDetailsScreen = () => {
           name='minuscircleo'
           size={60}
           color='black'
-          onPress={() => {
-            onMinus(quantity);
-          }}
+          onPress={onMinus}
         />
         <Text style={styles.quantity}>{quantity}</Text>
         <AntDesign
           name='pluscircleo'
           size={60}
           color='black'
-          onPress={() => {
-            onPlus(quantity);
-          }}
+          onPress={onPlus}
         />
       </View>
       <View style={styles.btn}>
         <Text style={styles.btnText}>
-          Add {quantity} to basket ${getTotal()}
+          Add {quantity} to basket &#8226; ${getTotal()}
         </Text>
       </View>
     </View>
